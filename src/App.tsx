@@ -1,23 +1,26 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { useState } from 'react';
 import './App.css';
 
 function App() {
+
+  const [search, setSearch] = useState('')
+  const [results, setResults] = useState(false)
+
+  const onSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault()
+    setResults(true)
+    console.log(search)
+  }
+
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <form onSubmit={onSubmit}>
+          <input type='text' placeholder="search" value={search} onChange={(e) => setSearch(e.target.value)} name="search"/>
+          <button>search</button>
+        </form>
+
+        { results? <h3>{search} not found</h3> : null}
       </header>
     </div>
   );
