@@ -36,3 +36,19 @@
     transform: rotate(360deg);
   }
 }
+
+.board {
+  display: inline-grid;
+  grid-template-rows: 80px 80px 80px;
+  grid-template-columns: 80px 80px 80px;
+  text-align: center;
+  margin: 20px;
+  justify-items: center;
+  align-items: center;
+}
+
+.space {
+  width: 50px;
+  height: 50px;
+  background-color: rgb(136, 136, 136);
+}
