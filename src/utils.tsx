@@ -37,4 +37,18 @@ const winningConditionsMet = (board: string[],  player: string, index: number) =
 
 }
 
-export default winningConditionsMet
+
+const computerMoves = (board: string[]) => {
+
+    let validMove = false
+    let randomNum = 0
+    while(!validMove) {
+        randomNum = Math.floor(Math.random() * 9)
+        if ( board[randomNum] === "") {
+            validMove = true
+        }
+    }
+    return randomNum
+}
+
+export  { winningConditionsMet, computerMoves }
