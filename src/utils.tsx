@@ -24,13 +24,11 @@ const winningConditionsMet = (board: string[],  player: string, index: number) =
 
     //check diagnols
 
-    if (cords[0] === cords[1]){
-        if (newBoard[0][0] === player && newBoard[1][1] === player && newBoard[2][2] === player) {
-            return true
-        }
-        if (newBoard[0][2] === player && newBoard[1][1] === player && newBoard[2][0] === player) {
-            return true
-        }
+    if (newBoard[0][0] === player && newBoard[1][1] === player && newBoard[2][2] === player) {
+        return true
+    }
+    if (newBoard[0][2] === player && newBoard[1][1] === player && newBoard[2][0] === player) {
+        return true
     }
 
     return false
